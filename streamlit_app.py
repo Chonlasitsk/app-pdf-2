@@ -28,7 +28,7 @@ def convert_pdf_to_images(pdf_path, num_pages=None):
         page = pdf_document.load_page(page_number)
         image = page.get_pixmap()
         pil_image = Image.frombytes("RGB", [image.width, image.height], image.samples)
-        images.append(pil_image)
+        images.append(pil_image.resize((image.width*2, image.height*2), Image.ANTIALIAS))
 
     pdf_document.close()
     return images
