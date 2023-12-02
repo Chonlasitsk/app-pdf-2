@@ -54,7 +54,7 @@ if uploaded_file is not None:
 
     images_to_process = images[:num_pages_to_process]
 
-    if st.button('Process'):
+    if st.button('Generate'):
         if opt_concat_or_not:
             process(images_to_process)
             with open('images.jpg', 'rb') as file:
